@@ -456,6 +456,8 @@ type ProtocolMappersConfig struct {
 	UsermodelClientRoleMappingClientID *string `json:"usermodel.clientRoleMapping.clientId,omitempty"`
 	IncludedClientAudience             *string `json:"included.client.audience,omitempty"`
 	IncludedCustomAudience             *string `json:"included.custom.audience,omitempty"`
+	IntrospectionTokenClaim            *string `json:"introspection.token.claim,omitempty"`
+	LightweightClaim                   *string `json:"lightweight.claim,omitempty"`
 	FullPath                           *string `json:"full.path,omitempty"`
 	AttributeName                      *string `json:"attribute.name,omitempty"`
 	AttributeNameFormat                *string `json:"attribute.nameformat,omitempty"`
