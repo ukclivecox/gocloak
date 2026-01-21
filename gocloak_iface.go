@@ -352,6 +352,8 @@ type GoCloakIface interface {
 	GetUserCount(ctx context.Context, token string, realm string, params GetUsersParams) (int, error)
 	// GetUserGroups get all groups for user
 	GetUserGroups(ctx context.Context, token, realm, userID string, params GetGroupsParams) ([]*Group, error)
+	// GetUserProfileConfig retrieves the user profile configuration for a realm
+	GetUserProfileConfig(ctx context.Context, token, realm string) (*UserProfileConfig, error)
 	// GetUsers get all users in realm
 	GetUsers(ctx context.Context, token, realm string, params GetUsersParams) ([]*User, error)
 	// GetUsersByRoleName returns all users have a given role
@@ -510,6 +512,8 @@ type GoCloakIface interface {
 	CreatePermissionTicket(ctx context.Context, token, realm string, permissions []CreatePermissionTicketParams) (*PermissionTicketResponseRepresentation, error)
 	// GrantUserPermission lets resource owner grant permission for specific resource ID to specific user ID
 	GrantUserPermission(ctx context.Context, token, realm string, permission PermissionGrantParams) (*PermissionGrantResponseRepresentation, error)
+	// UpdateUserProfileConfig updates the user profile configuration for a realm
+	UpdateUserProfileConfig(ctx context.Context, token, realm string, config UserProfileConfig) error
 	// UpdateUserPermission updates user permissions.
 	UpdateUserPermission(ctx context.Context, token, realm string, permission PermissionGrantParams) (*PermissionGrantResponseRepresentation, error)
 	// GetUserPermissions gets granted permissions according query parameters
